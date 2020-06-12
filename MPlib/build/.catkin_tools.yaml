@@ -1,0 +1,6 @@
+devel_space: /home/mithun/promp_codes/MPlib/devel
+install: false
+install_space: /home/mithun/promp_codes/MPlib/install
+profile: default
+source_space: /home/mithun/promp_codes/MPlib/src
+workspace: /home/mithun/promp_codes/MPlib

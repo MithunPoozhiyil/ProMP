@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e6bcccbc-0f20-45e6-927f-587538c033a7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/ProMPlib/franka_promp.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProMPlib/franka_promp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ProMPlib/promps.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ProMPlib/promps.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1bDDRDoBjBEii4EbtR68fdonvph" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="/opt/ros/kinetic/lib/python2.7/dist-packages" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+  </component>
+  <component name="RunManager" selected="Python.plot_data">
+    <configuration name="franka_kinematics" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MPlib" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/ProMPlib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/ProMPlib/franka_kinematics.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="franka_promp" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MPlib" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/ProMPlib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/ProMPlib/franka_promp.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="plot_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MPlib" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/ProMPlib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/ProMPlib/plot_data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="promps" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="MPlib" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/ProMPlib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/ProMPlib/promps.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.promps" />
+      <item itemvalue="Python.franka_promp" />
+      <item itemvalue="Python.franka_kinematics" />
+      <item itemvalue="Python.plot_data" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.plot_data" />
+        <item itemvalue="Python.franka_promp" />
+        <item itemvalue="Python.promps" />
+        <item itemvalue="Python.franka_kinematics" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e6bcccbc-0f20-45e6-927f-587538c033a7" name="Default Changelist" comment="" />
+      <created>1588157760141</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1588157760141</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="844" y="402" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588158295820">
+      <screen x="65" y="24" width="2495" height="1416" />
+    </state>
+    <state x="844" y="402" key="#com.intellij.execution.impl.EditConfigurationsDialog/65.24.2495.1416/2560.0.1920.1080@65.24.2495.1416" timestamp="1588158295820" />
+    <state x="1539" y="638" key="FileChooserDialogImpl" timestamp="1588163942108">
+      <screen x="65" y="24" width="2495" height="1416" />
+    </state>
+    <state x="1539" y="638" key="FileChooserDialogImpl/65.24.2495.1416/2560.0.1920.1080@65.24.2495.1416" timestamp="1588163942108" />
+    <state width="1883" height="403" key="GridCell.Tab.0.bottom" timestamp="1588177591907">
+      <screen x="65" y="24" width="2495" height="1416" />
+    </state>
+    <state width="1883" height="403" key="GridCell.Tab.0.bottom/65.24.2495.1416/2560.0.1920.1080@65.24.2495.1416" timestamp="1588177591907" />
+    <state width="1883" height="403" key="GridCell.Tab.0.center" timestamp="1588177591907">
+      <screen x="65" y="24" width="2495" height="1416" />
+    </state>
+    <state width="1883" height="403" key="GridCell.Tab.0.center/65.24.2495.1416/2560.0.1920.1080@65.24.2495.1416" timestamp="1588177591907" />
+    <state width="1883" height="403" key="GridCell.Tab.0.left" timestamp="1588177591907">
+      <screen x="65" y="24" width="2495" height="1416" />
+    </state>
+    <state width="1883" height="403" key="GridCell.Tab.0.left/65.24.2495.1416/2560.0.1920.1080@65.24.2495.1416" timestamp="1588177591907" />
+    <state width="1883" height="403" key="GridCell.Tab.0.right" timestamp="1588177591907">
+      <screen x="65" y="24" width="2495" height="1416" />
+    </state>
+    <state width="1883" height="403" key="GridCell.Tab.0.right/65.24.2495.1416/2560.0.1920.1080@65.24.2495.1416" timestamp="1588177591907" />
+    <state width="1883" height="403" key="GridCell.Tab.1.bottom" timestamp="1588177591908">
+      <screen x="65" y="24" width="2495" height="1416" />
+    </state>
+    <state width="1883" height="403" key="GridCell.Tab.1.bottom/65.24.2495.1416/2560.0.1920.1080@65.24.2495.1416" timestamp="1588177591908" />
+    <state width="1883" height="403" key="GridCell.Tab.1.center" timestamp="1588177591908">
+      <screen x="65" y="24" width="2495" height="1416" />
+    </state>
+    <state width="1883" height="403" key="GridCell.Tab.1.center/65.24.2495.1416/2560.0.1920.1080@65.24.2495.1416" timestamp="1588177591908" />
+    <state width="1883" height="403" key="GridCell.Tab.1.left" timestamp="1588177591908">
+      <screen x="65" y="24" width="2495" height="1416" />
+    </state>
+    <state width="1883" height="403" key="GridCell.Tab.1.left/65.24.2495.1416/2560.0.1920.1080@65.24.2495.1416" timestamp="1588177591908" />
+    <state width="1883" height="403" key="GridCell.Tab.1.right" timestamp="1588177591908">
+      <screen x="65" y="24" width="2495" height="1416" />
+    </state>
+    <state width="1883" height="403" key="GridCell.Tab.1.right/65.24.2495.1416/2560.0.1920.1080@65.24.2495.1416" timestamp="1588177591908" />
+    <state x="769" y="378" width="1392" height="728" key="SettingsEditor" timestamp="1588163951761">
+      <screen x="65" y="24" width="2495" height="1416" />
+    </state>
+    <state x="769" y="378" width="1392" height="728" key="SettingsEditor/65.24.2495.1416/2560.0.1920.1080@65.24.2495.1416" timestamp="1588163951761" />
+  </component>
+</project>

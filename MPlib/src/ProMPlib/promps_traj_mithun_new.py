@@ -137,48 +137,49 @@ if __name__ == "__main__":
     (pf_slave_c_pos, pf_master_j_pos, pf_master_j_vel, pf_mcurr_load) = dataset.get_position_feedback()
 
     time_data = []
-    for i in range(len(pf_slave_c_pos)):
-        # time_data.append(np.linspace(0, 1, len(nf_slave_c_pos[i])))
+    for i in range(len(nf_mcurr_load)):
+        time_data.append(np.linspace(0, 1, len(nf_mcurr_load[i])))
         # time_data.append(np.linspace(0, 1, len(tf_slave_c_pos[i])))
-        time_data.append(np.linspace(0, 1, len(pf_slave_c_pos[i])))
+        # time_data.append(np.linspace(0, 1, len(pf_slave_c_pos[i])))
+        print(i)
     # for i in range(12):
     #     time_data.append(np.linspace(0, 1, len(nf_slave_c_pos[i])))
 
     # QQ = nf_slave_c_pos
     # QQ = tf_slave_c_pos
-    QQ = pf_slave_c_pos
+    QQ = nf_mcurr_load
     time_t = time_data
-    # for i in range(QQ.size):
-
-    # QQ = np.array([cpos1, cpos2, cpos3, cpos4, cpos5, cpos6, cpos7, cpos8, cpos9, cpos10, cpos11, cpos12, cpos13, cpos14, cpos15])
-    # time_t = np.array([t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15])
-
-    # print(QQ.shape)
-    # print(time_t.shape)
-
-
 
     phaseGenerator = phase.LinearPhaseGenerator()
     basisGenerator = basis.NormalizedRBFBasisGenerator(phaseGenerator, numBasis=15, duration=1, basisBandWidthFactor=3, numBasisOutside=1)
     time = np.linspace(0, 1, 100)
-    nDof = 3
+    nDof = 7
     plotDof = 0
     proMP = ProMP(basisGenerator, phaseGenerator, nDof)   # 3 argument = nDOF
     learnedProMP = ProMP(basisGenerator, phaseGenerator, nDof)
     learner = MAPWeightLearner(learnedProMP)
     learner.learnFromData(QQ, time_t)
     trajectories = learnedProMP.getTrajectorySamples(time, 10)
-    print(trajectories.shape)
-    plt.figure()
-    plt.plot(time, trajectories[:, plotDof, :])
-    plt.xlabel('time')
-    plt.title('learnedProMP')
+    # print(trajectories.shape)
+    for i in range(nDof):
+        plt.figure()
+        plt.plot(time, trajectories[:, i, :])
+        plt.xlabel('time')
+        plt.title('learnedProMP %d' % i)
+        plt.savefig('/home/mithun/Desktop/promp_img/nf_mcurr_load_learnedProMP%d.png' % i)
 
-    plt.figure()
-    for i in range(len(nf_slave_c_pos)):
-        plt.plot(QQ[i][:, plotDof])
-        # plt.plot(QQ[2][:, plotDof], color='blue')
-    plt.title('x-pose')
+    for i in range(nDof):
+        plt.figure()
+        for j in range(len(nf_mcurr_load)):
+            plt.plot(QQ[j][:, i])
+        plt.title('j_pos %d' % i)
+        plt.savefig('/home/mithun/Desktop/promp_img/nf_mcurr_load%d.png' %i)
+
+    # plt.figure()
+    # for i in range(len(nf_slave_c_pos)):
+    #     plt.plot(QQ[i][:, plotDof])
+    #     # plt.plot(QQ[2][:, plotDof], color='blue')
+    # plt.title('tau0')
     ################################################################
     phaseGeneratorSmooth = phase.SmoothPhaseGenerator(duration = 1)
     proMPSmooth = ProMP(basisGenerator, phaseGeneratorSmooth, nDof)
@@ -186,9 +187,11 @@ if __name__ == "__main__":
     proMPSmooth.covMat = learnedProMP.covMat
 
     trajectories = proMPSmooth.getTrajectorySamples(time, 50)
-    plt.figure()
-    plt.plot(time, trajectories[:, plotDof, :], '--')
-    plt.title('learnedProMPSmooth')
+    for i in range(nDof):
+        plt.figure()
+        plt.plot(time, trajectories[:, i, :], '--')
+        plt.title('learnedProMPSmooth %d' % i)
+        plt.savefig('/home/mithun/Desktop/promp_img/nf_mcurr_load_learnedProMPSmooth%d.png' % i)
     plt.show()
     ################################################################
 

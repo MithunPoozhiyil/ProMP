@@ -8,18 +8,29 @@ class LoadData:
         self.data_torqfdb = {}
         self.data_posfdb = {}
         self.data_folder = "/home/mithun/promp/examples/python_promp/data_jayanth/data/"
-        self.nofdb = ['br00_nofeedback0.json', 'br00_nofeedback1.json', 'br00_nofeedback2.json',
-                      'sa00_nofeedback0.json', 'sa00_nofeedback1.json', 'sa00_nofeedback2.json',
-                      'la00_nofeedback0.json', 'la00_nofeedback1.json', 'la00_nofeedback2.json',
-                      'va00_nofeedback0.json', 'va00_nofeedback1.json', 'va00_nofeedback2.json',
-                      'di00_nofeedback0.json', 'di00_nofeedback2.json', 'di00_nofeedback2.json']  # ma00 not added
+        # self.nofdb = ['br00_nofeedback0.json', 'br00_nofeedback1.json', 'br00_nofeedback2.json', 'ma00_nofeedback0.json',
+        #               'ma00_nofeedback1.json', 'sa00_nofeedback0.json', 'sa00_nofeedback1.json', 'sa00_nofeedback2.json',
+        #               'la00_nofeedback0.json', 'la00_nofeedback1.json', 'la00_nofeedback2.json',
+        #               'va00_nofeedback0.json', 'va00_nofeedback1.json', 'va00_nofeedback2.json',
+        #               'di00_nofeedback0.json', 'di00_nofeedback2.json', 'di00_nofeedback2.json']
+        # self.nofdb = ['br00_nofeedback0.json', 'br00_nofeedback2.json', 'ma00_nofeedback1.json',
+        #               'sa00_nofeedback0.json', 'sa00_nofeedback2.json', 'la00_nofeedback1.json',
+        #               'va00_nofeedback0.json', 'va00_nofeedback2.json', 'di00_nofeedback0.json',
+        #               'di00_nofeedback2.json', 'di00_nofeedback2.json'] # datas starting from -ve y-axis
+        self.nofdb = ['br00_nofeedback0.json', 'br00_nofeedback2.json', 'ma00_nofeedback1.json',
+                      'sa00_nofeedback0.json', 'sa00_nofeedback2.json', 'la00_nofeedback1.json',
+                      'va00_nofeedback0.json', 'va00_nofeedback2.json']
 
-        self.torqfdb = ['br01_torquefeedback2.json', 'br01_torquefeedback3.json', 'br01_torquefeedback4.json',
-                        'ma01_torquefeedback0.json', 'ma01_torquefeedback1.json', 'ma01_torquefeedback2.json',
-                        'sa01_torquefeedback0.json', 'sa01_torquefeedback1.json', 'sa01_torquefeedback2.json',
-                        'la01_torquefeedback0.json', 'la01_torquefeedback1.json', 'la01_torquefeedback2.json',
-                        'va01_torquefeedback0.json', 'va01_torquefeedback1.json', 'va01_torquefeedback3.json',
-                        'di01_torquefeedback0.json', 'di01_torquefeedback1.json', 'di01_torquefeedback2.json']
+        # self.torqfdb = ['br01_torquefeedback2.json', 'br01_torquefeedback3.json', 'br01_torquefeedback4.json',
+        #                 'ma01_torquefeedback0.json', 'ma01_torquefeedback1.json', 'ma01_torquefeedback2.json',
+        #                 'sa01_torquefeedback0.json', 'sa01_torquefeedback1.json', 'sa01_torquefeedback2.json',
+        #                 'la01_torquefeedback0.json', 'la01_torquefeedback1.json', 'la01_torquefeedback2.json',
+        #                 'va01_torquefeedback0.json', 'va01_torquefeedback1.json', 'va01_torquefeedback3.json',
+        #                 'di01_torquefeedback0.json', 'di01_torquefeedback1.json', 'di01_torquefeedback2.json']
+
+        self.torqfdb = ['br01_torquefeedback2.json', 'br01_torquefeedback4.json', 'ma01_torquefeedback1.json',
+                        'sa01_torquefeedback0.json', 'sa01_torquefeedback2.json', 'la01_torquefeedback1.json',
+                        'va01_torquefeedback0.json', 'va01_torquefeedback3.json']
 
         self.posfdb = ['br02_positionfeedback0.json', 'br02_positionfeedback1.json', 'br02_positionfeedback2.json',
                        'ma02_positionfeedback0.json', 'ma02_positionfeedback1.json', 'ma02_positionfeedback2.json',

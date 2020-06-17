@@ -2,9 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import phase as phase
 import basis as basis
-import json
 import load_data
-
 import scipy.stats as stats
 
 class ProMP:
@@ -49,7 +47,7 @@ class ProMP:
     def getMeanAndStdTrajectory(self, time):
         basisMultiDoF = self.basis.basisMultiDoF(time, self.numDoF)
         trajectoryFlat = basisMultiDoF.dot(self.mu.transpose())
-        trajectoryMean = trajectoryFlat.reshape((self.numDoF, trajectoryFlat.shape[0] / self.numDoF))
+        trajectoryMean = trajectoryFlat.reshape((self.numDoF, trajectoryFlat.shape[0] // self.numDoF))
         trajectoryMean = np.transpose(trajectoryMean, (1, 0))
         stdTrajectory = np.zeros((len(time), self.numDoF))
 
@@ -91,7 +89,7 @@ class ProMP:
 
         return stats.multivariate_normal.logpdf(weights, mean=self.mu, cov=self.covMat)
 
-    def plotProMP(self, time, indices = None):
+    def plotProMP(self, time, indices=None):
         import plotter as plotter
 
         trajectoryMean, stdTrajectory = self.getMeanAndStdTrajectory(time)
@@ -137,8 +135,14 @@ if __name__ == "__main__":
     (pf_slave_c_pos, pf_master_j_pos, pf_master_j_vel, pf_mcurr_load) = dataset.get_position_feedback()
 
     time_data = []
-    for i in range(len(nf_mcurr_load)):
-        time_data.append(np.linspace(0, 1, len(nf_mcurr_load[i])))
+
+    input_data = tf_slave_c_pos
+    nDof = 3
+    data_name = 'tf_slave_c_pos'
+    plot_save_location = '/home/mithun/Desktop/promp_img_new/'
+
+    for i in range(len(input_data)):
+        time_data.append(np.linspace(0, 1, len(input_data[i])))
         # time_data.append(np.linspace(0, 1, len(tf_slave_c_pos[i])))
         # time_data.append(np.linspace(0, 1, len(pf_slave_c_pos[i])))
         print(i)
@@ -147,33 +151,41 @@ if __name__ == "__main__":
 
     # QQ = nf_slave_c_pos
     # QQ = tf_slave_c_pos
-    QQ = nf_mcurr_load
+    QQ = input_data
     time_t = time_data
 
     phaseGenerator = phase.LinearPhaseGenerator()
     basisGenerator = basis.NormalizedRBFBasisGenerator(phaseGenerator, numBasis=15, duration=1, basisBandWidthFactor=3, numBasisOutside=1)
     time = np.linspace(0, 1, 100)
-    nDof = 7
     plotDof = 0
     proMP = ProMP(basisGenerator, phaseGenerator, nDof)   # 3 argument = nDOF
     learnedProMP = ProMP(basisGenerator, phaseGenerator, nDof)
     learner = MAPWeightLearner(learnedProMP)
     learner.learnFromData(QQ, time_t)
     trajectories = learnedProMP.getTrajectorySamples(time, 10)
+    meanTraj, covTraj = learnedProMP.getMeanAndCovarianceTrajectory(time)
+    # plt.figure()
+    # plt.plot(time, meanTraj[:, 0])
+    # plt.show()
+    trajectoryMean, stdTrajectory = learnedProMP.getMeanAndStdTrajectory(time)
+    learnedProMP.plotProMP(time)
     # print(trajectories.shape)
     for i in range(nDof):
         plt.figure()
         plt.plot(time, trajectories[:, i, :])
+        plt.plot(time, meanTraj[:, i], color='green', linewidth=5)
         plt.xlabel('time')
         plt.title('learnedProMP %d' % i)
-        plt.savefig('/home/mithun/Desktop/promp_img/nf_mcurr_load_learnedProMP%d.png' % i)
+        plt.autoscale(enable=True, axis='x', tight=True)
+        plt.savefig(plot_save_location+data_name+'_learnedProMP%d.png' % i)
 
     for i in range(nDof):
         plt.figure()
         for j in range(len(nf_mcurr_load)):
             plt.plot(QQ[j][:, i])
-        plt.title('j_pos %d' % i)
-        plt.savefig('/home/mithun/Desktop/promp_img/nf_mcurr_load%d.png' %i)
+        plt.title(data_name+'%d' % i)
+        plt.autoscale(enable=True, axis='x', tight=True)
+        plt.savefig(plot_save_location+data_name+'%d.png' %i)
 
     # plt.figure()
     # for i in range(len(nf_slave_c_pos)):
@@ -185,13 +197,16 @@ if __name__ == "__main__":
     proMPSmooth = ProMP(basisGenerator, phaseGeneratorSmooth, nDof)
     proMPSmooth.mu = learnedProMP.mu
     proMPSmooth.covMat = learnedProMP.covMat
-
     trajectories = proMPSmooth.getTrajectorySamples(time, 50)
+    meanTraj_s, covTraj_s = proMPSmooth.getMeanAndCovarianceTrajectory(time)
+
     for i in range(nDof):
         plt.figure()
         plt.plot(time, trajectories[:, i, :], '--')
+        # plt.plot(time, meanTraj_s[:, i], color='green', linewidth=5)
         plt.title('learnedProMPSmooth %d' % i)
-        plt.savefig('/home/mithun/Desktop/promp_img/nf_mcurr_load_learnedProMPSmooth%d.png' % i)
+        plt.autoscale(enable=True, axis='x', tight=True)
+        plt.savefig(plot_save_location+data_name+'_learnedProMPSmooth%d.png' % i)
     plt.show()
     ################################################################
 

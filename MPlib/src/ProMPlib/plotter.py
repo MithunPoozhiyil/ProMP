@@ -12,7 +12,8 @@ def plotMeanAndStd(time, meanTraj, stdTraj, indices = None):
     if (not indices):
         indices = range(meanTraj.shape[1])
 
-
+    data_name = 'tf_slave_c_pos'
+    plot_save_location = '/home/mithun/Desktop/promp_img_new/'
 
     for i in indices:
         plt.figure()
@@ -30,7 +31,9 @@ def plotMeanAndStd(time, meanTraj, stdTraj, indices = None):
 
         label = 'Joint %d' % (i)
         newHandle = plt.plot(x, curve, color=color, label=label)
+        plt.title('mean_and_var %d' % i)
         legendHandles.append(newHandle[0])
+        plt.savefig(plot_save_location + data_name + '_mean_and_var%d.png' % i)
 
     plt.legend(handles=legendHandles)
 
